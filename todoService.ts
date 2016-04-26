@@ -1,6 +1,11 @@
 import {Injectable} from 'angular2/core'
-@Injectable()
+import {TodoModel} from './todoModel'
 
+@Injectable()
 export class TodoService {
-  todos = [];
+  todos = [
+    new TodoModel("eat"),
+    new TodoModel("sleep"),
+    new TodoModel("walk")
+  ];
 }

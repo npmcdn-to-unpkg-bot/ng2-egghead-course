@@ -1,21 +1,23 @@
 import {Component, Inject} from 'angular2/core';
 import {TodoService} from './todoService';
+import {TodoModel} from './todoModel';
 
 @Component({
   selector: 'todo-input',
-  template: `changed to form, ngModel added
+  template: `todoModel added
   <form (submit)="getFormData()">
-  <input type=text [(ngModel)]=todoModel>
+  <input type=text [(ngModel)]=todoModel.title>
   <button>Button</button>
   </form>`
 })
 
 export class TodoInput{
-  todoModel;
+  todoModel:TodoModel = new TodoModel();
   constructor(@Inject(TodoService) public todoService:TodoService) {}
 
   getFormData() {
     this.todoService.todos.push(this.todoModel);
     console.log(this.todoService.todos);
+    this.todoModel = new TodoModel();
   }
 }
