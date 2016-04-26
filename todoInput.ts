@@ -3,18 +3,19 @@ import {TodoService} from './todoService';
 
 @Component({
   selector: 'todo-input',
-  template: `Button click w/ value passed, w/ $event passed<br />
-  Adding injectable TodoService<br />
-  <input type=text #txt>
-  <button (click)="click_event(txt.value)">Button Click</button>`
+  template: `changed to form, ngModel added
+  <form (submit)="getFormData()">
+  <input type=text [(ngModel)]=todoModel>
+  <button>Button</button>
+  </form>`
 })
 
 export class TodoInput{
+  todoModel;
   constructor(@Inject(TodoService) public todoService:TodoService) {}
 
-  click_event(txt) {
-    this.todoService.todos.push(txt);
-    console.log(txt+ " hb pushed");
+  getFormData() {
+    this.todoService.todos.push(this.todoModel);
     console.log(this.todoService.todos);
   }
 }
