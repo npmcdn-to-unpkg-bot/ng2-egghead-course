@@ -2,13 +2,15 @@ import {bootstrap} from 'angular2/platform/browser';
 import {Component} from 'angular2/core';
 import {TodoInput} from './todoInput';
 import {TodoService} from './todoService';
+import {TodoList} from './todoList';
 
 @Component({
   selector: 'app',
-  directives: [TodoInput],
+  directives: [TodoInput, TodoList],
   template: `<div>
-  	<p>Here goes input component</p>
-    <todo-input></todo-input>
+  	<p>Immediate rendering. TodoService+TodoList</p>
+    <todo-input></todo-input><br />
+    <todo-list></todo-list>
     </div>`
 })
 class App{}

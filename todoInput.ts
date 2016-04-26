@@ -10,9 +10,7 @@ import {TodoService} from './todoService';
 })
 
 export class TodoInput{
-  constructor(@Inject(TodoService) todoService:TodoService) {
-    this.todoService = todoService;
-  }
+  constructor(@Inject(TodoService) public todoService:TodoService) {}
 
   click_event(txt) {
     this.todoService.todos.push(txt);
