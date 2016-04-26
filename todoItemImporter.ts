@@ -1,4 +1,4 @@
-import {Component, Input, ViewEncapsulation} from 'angular2/core';
+import {Component, Input, Output, EventEmitter, ViewEncapsulation} from 'angular2/core';
 
 @Component({
 	encapsulation: ViewEncapsulation.Emulated,
@@ -9,7 +9,7 @@ import {Component, Input, ViewEncapsulation} from 'angular2/core';
 		</style>
 		<div>
 			<p [ngClass]="todo.state">
-			<button (click)="todo.toggleState()">Completed</button> 
+			<button (click)="toggle.emit(todo)">Completed</button> 
 			{{todo.title}}
 			</p>
 		</div>`
@@ -17,4 +17,5 @@ import {Component, Input, ViewEncapsulation} from 'angular2/core';
 
 export class TodoItemImporter{
 	@Input() todo;
+	@Output() toggle = new EventEmitter;
 }

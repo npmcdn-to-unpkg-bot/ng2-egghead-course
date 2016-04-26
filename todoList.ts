@@ -1,16 +1,16 @@
 import {Component, Inject} from 'angular2/core'
 import {TodoService} from './todoService'
 import {TodoItemImporter} from './todoItemImporter'
-import {CustomPipe} from './customPipe'
+import {StatePipe} from './statePipe'
 
 @Component({
 	selector: 'todo-list',
-	pipes: [CustomPipe],
+	pipes: [StatePipe],
 	directives: [TodoItemImporter],
 	template: 
 	`<ul>
-		<li *ngFor="#todo of todoService.todos | search" [hidden]="todo.state!='started'">
-			<inpt-elem [todo]=todo></inpt-elem>
+		<li *ngFor="#todo of todoService.todos | state">
+			<inpt-elem [todo]=todo (toggle)=todoService.toggleTodo($event)></inpt-elem>
 		</li>
 	</ul>`
 })
