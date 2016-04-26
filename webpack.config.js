@@ -1,3 +1,4 @@
+
 module.exports = 
 {
   entry: './main.ts',
@@ -7,7 +8,7 @@ module.exports =
 	},
 
    resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+    extensions: ['', '.ts', '.tsx', '.js']
   },
 
   module: {
