@@ -1,0 +1,25 @@
+{
+  "name": "angular-2-fundamentals",
+  "version": "1.0.0",
+  "description": "Working my way through the [egghead.io Angular 2 Fundamentals series](https://egghead.io/series/angular-2-fundamentals).",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "standard && tape test/*.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomwayson/angular-2-fundamentals.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomwayson/angular-2-fundamentals/issues"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "~1.14.1",
+    "webpack": "~1.13.0",
+    "awesome-typescript-loader": "~0.17.0",
+    "typescript": "~1.8.10"
+  }
+}
