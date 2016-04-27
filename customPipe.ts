@@ -5,11 +5,7 @@ import {Pipe} from 'angular2/core'
 })
 
 export class CustomPipe{
-	transform(value) {
-		return value.filter(function(item){
-			let t_r = item.title.split("").reverse();
-			item.title = t_r.join("");
-			return item;
-		});
+	transform(value, [chrz]) {
+		return value.filter((item) => item.title.startsWith(chrz));
 	}
 }

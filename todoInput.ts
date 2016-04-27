@@ -4,7 +4,7 @@ import {TodoModel} from './todoModel';
 
 @Component({
   selector: 'todo-input',
-  template: `todoModel added
+  template: `
   <form (submit)="getFormData()">
   <input type=text [(ngModel)]=todoModel.title>
   <button>Button</button>
