@@ -5,7 +5,7 @@ import {Pipe} from 'angular2/core'
 })
 
 export class StatePipe{
-	transform(value) {
-		return value.filter((item) => item.state === 'started');
+	transform(value, [state]) {
+		return value.filter((item) => item.state === state);
 	}
 }

@@ -19,7 +19,7 @@ export class TodoService {
     this.todos = [
       ...this.todos.slice(0, i),
       todo,
-      ...this.todos.slice(i+1)
+      ...this.todos.slice(i + 1)
     ]
   }
 }
