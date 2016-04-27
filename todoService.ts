@@ -17,11 +17,12 @@ export class TodoService {
   }
 
   toggleTodo(todo:TodoModel){
-    todo.toggleState();
+    //todo.toggleState();
     const i = this.todos.indexOf(todo);
+    const toggled = Object.assign({}, todo, {state: todo.state === 'started' ? 'completed' : todo.state})
     this.todos = [
       ...this.todos.slice(0, i),
-      todo,
+      toggled,
       ...this.todos.slice(i + 1)
     ]
   }
